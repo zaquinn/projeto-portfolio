@@ -1,103 +1,145 @@
-import { Box, Button, Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import { Flex, Heading, Text } from "@chakra-ui/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Link } from "react-scroll";
+import { Swiper, SwiperSlide } from "swiper/react";
 
+import "swiper/css";
+import "swiper/css/effect-cards";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import "./styles.css";
+
+import { EffectCards, Pagination, Navigation, Autoplay } from "swiper";
+import { Header } from "../../components/Header";
+
+import { useTypewriter, Cursor } from "react-simple-typewriter";
+
+AOS.init();
 export const MainPage = () => {
-  AOS.init();
+  const words = ["Front End", "Back End", "Full Stack"];
+  const { text } = useTypewriter({
+    words,
+    loop: 0,
+    typeSpeed: 70,
+    deleteSpeed: 50,
+    delaySpeed: 1000,
+  });
+
   return (
-    <VStack h="max-content" bg="darkblue.900">
+    <Flex
+      height="max-content"
+      flexDirection="column"
+      alignItems="center"
+      w="100%"
+    >
+      <Header />
       <Flex
-        justifyContent="space-between"
-        h="2000px"
-        bgGradient="linear(to-b, darkblue.400, darkblue.500, darkblue.900 )"
+        h="100vh"
         w="100%"
-        py="30px"
+        bg="transparent"
+        id="section1"
+        justifyContent="center"
+        mb="100px"
       >
-        <VStack>
-          <Heading
-            color="white"
-            borderRadius="8px"
-            padding="5px"
-            borderColor="green.200"
-          >
-            &lt;Isaac Xavier&gt;
-          </Heading>
-          <Text color="white" fontSize="16px" fontWeight="700">
-            &lt;Desenvolvedor Full Stack&gt;
+        <Heading
+          pt="105px"
+          fontSize={["14px", "14px", "14px", "initial"]}
+          w="100%"
+          data-aos="fade-down-right"
+          data-aos-mirror="false"
+          data-aos-once="false"
+          data-aos-easing="ease-in-out"
+        >
+          Oi, eu sou o Isaac, sou Desenvolvedor{" "}
+          <Text as="span" color="neon.300">
+            {text}
+            <Cursor />
           </Text>
-        </VStack>
-        <Box>
-          <Button
-            borderColor="darkblue.400"
-            bg="gray.700"
-            padding="5px"
-            color="white"
-            border="2px solid"
-            borderRadius="14px"
-          >
-            {/* tag link do react scroll pra gerar efeito de ir pra onde eu quero, em to"section1", passar o id
-            da div que eu quero que vá quando clicar, atribuir id a div desejada tambem */}
-            <Link
-              activeClass="active"
-              to="section1"
-              spy={true}
-              smooth={true}
-              offset={-100}
-              duration={500}
-            >
-              Link R-Scroll
-            </Link>
-          </Button>
-          <Button
-            borderColor="darkblue.400"
-            bg="gray.700"
-            padding="5px"
-            color="white"
-            border="2px solid"
-            borderRadius="14px"
-          >
-            Botão 1
-          </Button>
-        </Box>
-      </Flex>
-      <Heading>Corpo aqui</Heading>
-      <Flex
-        h="600px"
-        w="50%"
-        bg="green.200"
-        // configurações de animação do scroll que faz com que ocorra animação ao aparecer e sumir
-        data-aos="fade-up"
-        data-aos-mirror="true"
-        data-aos-once="false"
-        data-aos-easing="ease-in-out"
-      >
-        <Heading>Testando</Heading>
+        </Heading>
       </Flex>
       <Flex
-        h="600px"
-        w="50%"
-        bg="green.200"
-        // configurações de animação do scroll que faz com que ocorra animação ao aparecer e sumir
-        data-aos="fade-left"
-        data-aos-mirror="true"
+        h="100vh"
+        w="60%"
+        bg="gray.300"
+        id="section2"
+        justifyContent="center"
+        alignItems="center"
+        data-aos="fade-down-left"
+        data-aos-mirror="false"
         data-aos-once="false"
         data-aos-easing="ease-in-out"
+        mb="100px"
       >
-        <Heading>Lib</Heading>
+        <Heading>Seçao 2</Heading>
       </Flex>
       <Flex
-        h="600px"
-        w="50%"
-        bg="green.200"
-        // configurações de animação do scroll que faz com que ocorra animação ao aparecer e sumir
-        data-aos="flip-left"
-        data-aos-mirror="true"
+        h="100vh"
+        w="60%"
+        bg="gray.200"
+        id="section3"
+        justifyContent="center"
+        alignItems="center"
+        data-aos="fade-down-right"
+        data-aos-mirror="false"
         data-aos-once="false"
         data-aos-easing="ease-in-out"
+        mb="100px"
       >
-        <Heading>Aos</Heading>
+        <Swiper
+          effect={"cards"}
+          grabCursor={true}
+          pagination={{
+            clickable: true,
+          }}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          navigation={true}
+          modules={[EffectCards, Pagination, Navigation, Autoplay]}
+          className="mySwiper"
+        >
+          <SwiperSlide>Slide 1</SwiperSlide>
+          <SwiperSlide>Slide 2</SwiperSlide>
+          <SwiperSlide>Slide 3</SwiperSlide>
+          <SwiperSlide>Slide 4</SwiperSlide>
+          <SwiperSlide>Slide 5</SwiperSlide>
+          <SwiperSlide>Slide 6</SwiperSlide>
+          <SwiperSlide>Slide 7</SwiperSlide>
+          <SwiperSlide>Slide 8</SwiperSlide>
+          <SwiperSlide>Slide 9</SwiperSlide>
+        </Swiper>
       </Flex>
-    </VStack>
+      <Flex
+        h="100vh"
+        w="60%"
+        bg="gray.200"
+        id="section4"
+        data-aos="fade-down-left"
+        data-aos-mirror="false"
+        data-aos-once="false"
+        data-aos-easing="ease-in-out"
+        mb="100px"
+      >
+        <Heading>Seçao 4</Heading>
+      </Flex>
+      <Flex
+        h="100vh"
+        w="60%"
+        bg="gray.200"
+        id="section5"
+        data-aos="fade-down-right"
+        data-aos-mirror="false"
+        data-aos-once="false"
+        data-aos-easing="ease-in-out"
+        mb="100px"
+      >
+        <Heading>Seçao 5</Heading>
+      </Flex>
+      <Flex h="100px" bg="futuristas.200" as="footer" w="100%">
+        Rodapé
+      </Flex>
+    </Flex>
   );
 };

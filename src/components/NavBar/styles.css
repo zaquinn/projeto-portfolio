@@ -1,0 +1,23 @@
+.buttonHeader {
+  display: flex;
+  cursor: pointer;
+  height: max-content;
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 8px;
+  border-bottom: 3px solid transparent;
+}
+
+.buttonHeader:hover {
+  color: #9d00c6;
+}
+
+.buttonHeader--Active {
+  color: #9d00c6;
+  border-bottom: 3px solid #9d00c6;
+}
+
+.buttonHeader:hover {
+  cursor: pointer;
+}
