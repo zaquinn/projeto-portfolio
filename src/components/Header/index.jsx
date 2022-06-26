@@ -54,7 +54,7 @@ export const Header = () => {
                 <AiOutlineMenu />
               </Button>
             </Flex>
-            <NavBar />
+            <NavBar onClose={onClose} />
           </DrawerBody>
         </DrawerContent>
       </Drawer>

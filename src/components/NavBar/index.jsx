@@ -10,7 +10,7 @@ import {
 } from "react-icons/ai";
 import { RenderContext } from "../../context";
 
-export const NavBar = () => {
+export const NavBar = ({ onClose }) => {
   const { shouldRender, setShouldRender } = useContext(RenderContext);
   return (
     <Flex
@@ -31,7 +31,10 @@ export const NavBar = () => {
         _active={{ bg: "transparent" }}
         display="flex"
         alignItems="center"
-        onClick={() => setShouldRender("Home")}
+        onClick={() => {
+          setShouldRender("Home");
+          onClose();
+        }}
       >
         <Text as="span" fontSize="24px" paddingRight="8px">
           <AiOutlineHome />
@@ -48,7 +51,10 @@ export const NavBar = () => {
         _active={{ bg: "transparent" }}
         display="flex"
         alignItems="center"
-        onClick={() => setShouldRender("About")}
+        onClick={() => {
+          setShouldRender("About");
+          onClose();
+        }}
       >
         <Text as="span" fontSize="24px" paddingRight="8px">
           <AiOutlineIdcard />
@@ -65,7 +71,10 @@ export const NavBar = () => {
         _active={{ bg: "transparent" }}
         display="flex"
         alignItems="center"
-        onClick={() => setShouldRender("Projects")}
+        onClick={() => {
+          setShouldRender("Projects");
+          onClose();
+        }}
       >
         <Text as="span" fontSize="24px" paddingRight="8px">
           <AiOutlineBulb />
@@ -82,7 +91,10 @@ export const NavBar = () => {
         _active={{ bg: "transparent" }}
         display="flex"
         alignItems="center"
-        onClick={() => setShouldRender("Techs")}
+        onClick={() => {
+          setShouldRender("Techs");
+          onClose();
+        }}
       >
         <Text as="span" fontSize="24px" paddingRight="8px">
           <AiOutlineCodeSandbox />
@@ -99,7 +111,10 @@ export const NavBar = () => {
         _active={{ bg: "transparent" }}
         display="flex"
         alignItems="center"
-        onClick={() => setShouldRender("Contact")}
+        onClick={() => {
+          setShouldRender("Contact");
+          onClose();
+        }}
       >
         <Text as="span" fontSize="24px" paddingRight="8px">
           <AiOutlineComment />
