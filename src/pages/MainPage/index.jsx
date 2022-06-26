@@ -47,7 +47,7 @@ export const MainPage = () => {
           </Heading>
         </Flex>
       )}
-      {shouldRender === "About" && (
+      {shouldRender === "Projects" && (
         <Flex
           h="75vh"
           w="60%"

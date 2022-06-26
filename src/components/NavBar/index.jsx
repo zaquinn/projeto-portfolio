@@ -26,7 +26,7 @@ export const NavBar = () => {
         bg="transparent"
         borderRadius="0px"
         borderBottom="3px solid"
-        borderColor="transparent"
+        borderColor={shouldRender === "Home" ? "neon.300" : "transparent"}
         _hover={{ borderColor: "neon.300" }}
         _active={{ bg: "transparent" }}
         display="flex"
@@ -43,7 +43,7 @@ export const NavBar = () => {
         bg="transparent"
         borderRadius="0px"
         borderBottom="3px solid"
-        borderColor="transparent"
+        borderColor={shouldRender === "About" ? "neon.300" : "transparent"}
         _hover={{ borderColor: "neon.300" }}
         _active={{ bg: "transparent" }}
         display="flex"
@@ -60,7 +60,7 @@ export const NavBar = () => {
         bg="transparent"
         borderRadius="0px"
         borderBottom="3px solid"
-        borderColor="transparent"
+        borderColor={shouldRender === "Projects" ? "neon.300" : "transparent"}
         _hover={{ borderColor: "neon.300" }}
         _active={{ bg: "transparent" }}
         display="flex"
@@ -77,7 +77,7 @@ export const NavBar = () => {
         bg="transparent"
         borderRadius="0px"
         borderBottom="3px solid"
-        borderColor="transparent"
+        borderColor={shouldRender === "Techs" ? "neon.300" : "transparent"}
         _hover={{ borderColor: "neon.300" }}
         _active={{ bg: "transparent" }}
         display="flex"
@@ -94,7 +94,7 @@ export const NavBar = () => {
         bg="transparent"
         borderRadius="0px"
         borderBottom="3px solid"
-        borderColor="transparent"
+        borderColor={shouldRender === "Contact" ? "neon.300" : "transparent"}
         _hover={{ borderColor: "neon.300" }}
         _active={{ bg: "transparent" }}
         display="flex"

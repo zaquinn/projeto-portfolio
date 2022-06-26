@@ -84,6 +84,7 @@ export const Header = () => {
           w="max-content"
           fontSize="24px"
           _hover={{ border: "none", bg: "none" }}
+          _active={{ bg: "transparent" }}
           onClick={onOpen}
         >
           <AiOutlineMenu />
