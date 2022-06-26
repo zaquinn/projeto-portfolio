@@ -1,4 +1,3 @@
-import { Link } from "react-scroll";
 import {
   Flex,
   Heading,
@@ -21,17 +20,40 @@ export const Header = () => {
   return (
     <Flex
       justifyContent="space-between"
-      h="100px"
+      h="12vh"
       bg="rgba(2, 3, 5, 0.8)"
       py="30px"
-      position="fixed"
-      w="100vw"
-      zIndex="1"
+      w="100%"
+      maxWidth="100vw"
+      alignItems="center"
     >
-      <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
+      <Drawer
+        placement="right"
+        onClose={onClose}
+        isOpen={isOpen}
+        size={["full", "xs"]}
+      >
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerBody bg="darkblue.500">
+          <DrawerBody bg="darkblue.500" p="0px">
+            <Flex
+              w="100%"
+              justifyContent="flex-end"
+              h="12vh"
+              alignItems="center"
+            >
+              <Button
+                border="none"
+                bg="none"
+                h="max-content"
+                w="max-content"
+                fontSize="24px"
+                _hover={{ border: "none", bg: "none" }}
+                onClick={onClose}
+              >
+                <AiOutlineMenu />
+              </Button>
+            </Flex>
             <NavBar />
           </DrawerBody>
         </DrawerContent>
@@ -42,30 +64,31 @@ export const Header = () => {
         alignItems="center"
         justifyContent="center"
         w="max-content"
-        maxWidth="100%"
+        maxWidth="50%"
       >
         <Heading
           color="white"
           borderRadius="8px"
           borderColor="green.200"
-          fontSize={["16px", "16px", "16px", "26px"]}
+          fontSize={["16px", "18px", "24px", "26px"]}
           pl="15px"
         >
           &lt;Isaac Xavier&gt;
         </Heading>
       </Flex>
-      <Button
-        border="none"
-        bg="none"
-        h="max-content"
-        w="max-content"
-        fontSize="24px"
-        display={["block", "block", "block", "none"]}
-        _hover={{ border: "none", bg: "none" }}
-        onClick={onOpen}
-      >
-        <AiOutlineMenu />
-      </Button>
+      <Flex display={["block", "block", "block", "none"]}>
+        <Button
+          border="none"
+          bg="none"
+          h="max-content"
+          w="max-content"
+          fontSize="24px"
+          _hover={{ border: "none", bg: "none" }}
+          onClick={onOpen}
+        >
+          <AiOutlineMenu />
+        </Button>
+      </Flex>
       <Flex display={["none", "none", "none", "flex"]}>
         <NavBar />
       </Flex>
