@@ -39,26 +39,38 @@ export const MainPage = () => {
       <Header />
       {shouldRender === "Home" && (
         <Flex h="75vh" w="100%" bg="transparent" justifyContent="center">
-          <Flex pt="105px" pl="10%" w="100%">
-            <Flex flexDirection="column" w="50%" maxW="500px">
-              <Heading>Olá,</Heading>
-              <Heading>
+          <Flex
+            pt="105px"
+            pl="5%"
+            pr="5%"
+            w="100%"
+            flexDirection={["column-reverse", "column-reverse", "row"]}
+            justifyContent="center"
+          >
+            <Flex
+              flexDirection="column"
+              w={["100%", "100%", "50%"]}
+              maxW="500px"
+              h="100%"
+            >
+              <Heading lineHeight="2.8rem">Olá,</Heading>
+              <Heading lineHeight="2.8rem">
                 eu sou o{" "}
-                <Text as="span" color="neon.200">
+                <Text as="span" color="neon.200" lineHeight="2.8rem">
                   Isaac Xavier
                 </Text>
               </Heading>
-              <Heading>
+              <Heading lineHeight="2.8rem">
                 sou Desenvolvedor{" "}
-                <Text as="span" color="cpunk.400">
+                <Text as="span" color="cpunk.400" lineHeight="2.8rem">
                   {text}
-                  <Text as="span" color="white">
+                  <Text as="span" color="white" lineHeight="2.8rem">
                     <Cursor />
                   </Text>
                 </Text>
               </Heading>
             </Flex>
-            <Flex w="200">
+            <Flex w="200" justifyContent="center">
               <Image
                 src={avatar}
                 h={["150px", "150px", "200px"]}
