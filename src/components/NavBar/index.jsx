@@ -20,107 +20,122 @@ export const NavBar = ({ onClose }) => {
       w={["", "", "", "90%"]}
       justifyContent="space-between"
       flexDirection={["column", "column", "column", "row"]}
-      alignItems={["flex-start", "flex-start", "flex-start", "center"]}
+      alignItems={["center", "center", "center", "center"]}
     >
-      <Button
-        bg="transparent"
-        borderRadius="0px"
-        borderBottom="3px solid"
-        borderColor={shouldRender === "Home" ? "neon.300" : "transparent"}
-        _hover={{ borderColor: "neon.300" }}
-        _active={{ bg: "transparent" }}
-        display="flex"
-        alignItems="center"
-        onClick={() => {
-          setShouldRender("Home");
-          onClose();
-        }}
+      <Flex
+        flexDirection={["column", "column", "column", "row"]}
+        w={["max-content", "max-content", "max-content", "100%"]}
+        alignItems={["flex-start", "flex-start", "flex-start", "center"]}
+        justifyContent={[
+          "space-between",
+          "space-between",
+          "space-between",
+          "flex-start",
+        ]}
+        h="100%"
       >
-        <Text as="span" fontSize="24px" paddingRight="8px">
-          <AiOutlineHome />
-        </Text>
-        Home
-      </Button>
+        <Button
+          bg="transparent"
+          borderRadius="0px"
+          _hover={{ color: "cpunk.400" }}
+          _active={{ bg: "transparent" }}
+          color={shouldRender === "Home" ? "cpunk.400" : ""}
+          display="flex"
+          alignItems="center"
+          onClick={() => {
+            setShouldRender("Home");
+            onClose();
+          }}
+          justifyContent="center"
+        >
+          <Text as="span" fontSize="24px" paddingRight="8px">
+            <AiOutlineHome />
+          </Text>
+          Home
+        </Button>
 
-      <Button
-        bg="transparent"
-        borderRadius="0px"
-        borderBottom="3px solid"
-        borderColor={shouldRender === "About" ? "neon.300" : "transparent"}
-        _hover={{ borderColor: "neon.300" }}
-        _active={{ bg: "transparent" }}
-        display="flex"
-        alignItems="center"
-        onClick={() => {
-          setShouldRender("About");
-          onClose();
-        }}
-      >
-        <Text as="span" fontSize="24px" paddingRight="8px">
-          <AiOutlineIdcard />
-        </Text>
-        Sobre mim
-      </Button>
+        <Button
+          bg="transparent"
+          borderRadius="0px"
+          _hover={{ color: "cpunk.400" }}
+          _active={{ bg: "transparent" }}
+          color={shouldRender === "About" ? "cpunk.400" : ""}
+          display="flex"
+          alignItems="center"
+          onClick={() => {
+            setShouldRender("About");
+            onClose();
+          }}
+          justifyContent="center"
+        >
+          <Text as="span" fontSize="24px" paddingRight="8px">
+            <AiOutlineIdcard />
+          </Text>
+          Sobre mim
+        </Button>
 
-      <Button
-        bg="transparent"
-        borderRadius="0px"
-        borderBottom="3px solid"
-        borderColor={shouldRender === "Projects" ? "neon.300" : "transparent"}
-        _hover={{ borderColor: "neon.300" }}
-        _active={{ bg: "transparent" }}
-        display="flex"
-        alignItems="center"
-        onClick={() => {
-          setShouldRender("Projects");
-          onClose();
-        }}
-      >
-        <Text as="span" fontSize="24px" paddingRight="8px">
-          <AiOutlineBulb />
-        </Text>
-        Projetos
-      </Button>
+        <Button
+          bg="transparent"
+          borderRadius="0px"
+          _hover={{ color: "cpunk.400" }}
+          _active={{ bg: "transparent" }}
+          color={shouldRender === "Projects" ? "cpunk.400" : ""}
+          display="flex"
+          alignItems="center"
+          onClick={() => {
+            setShouldRender("Projects");
+            onClose();
+          }}
+          justifyContent="center"
+        >
+          <Text as="span" fontSize="24px" paddingRight="8px">
+            <AiOutlineBulb />
+          </Text>
+          Projetos
+        </Button>
 
-      <Button
-        bg="transparent"
-        borderRadius="0px"
-        borderBottom="3px solid"
-        borderColor={shouldRender === "Techs" ? "neon.300" : "transparent"}
-        _hover={{ borderColor: "neon.300" }}
-        _active={{ bg: "transparent" }}
-        display="flex"
-        alignItems="center"
-        onClick={() => {
-          setShouldRender("Techs");
-          onClose();
-        }}
-      >
-        <Text as="span" fontSize="24px" paddingRight="8px">
-          <AiOutlineCodeSandbox />
-        </Text>
-        Tecnologias
-      </Button>
+        <Button
+          bg="transparent"
+          borderRadius="0px"
+          _hover={{ color: "cpunk.400" }}
+          _active={{ bg: "transparent" }}
+          color={shouldRender === "Techs" ? "cpunk.400" : ""}
+          display="flex"
+          alignItems="center"
+          onClick={() => {
+            setShouldRender("Techs");
+            onClose();
+          }}
+          justifyContent="center"
+        >
+          <Text as="span" fontSize="24px" paddingRight="8px">
+            <AiOutlineCodeSandbox />
+          </Text>
+          Tecnologias
+        </Button>
 
-      <Button
-        bg="transparent"
-        borderRadius="0px"
-        borderBottom="3px solid"
-        borderColor={shouldRender === "Contact" ? "neon.300" : "transparent"}
-        _hover={{ borderColor: "neon.300" }}
-        _active={{ bg: "transparent" }}
-        display="flex"
-        alignItems="center"
-        onClick={() => {
-          setShouldRender("Contact");
-          onClose();
-        }}
-      >
-        <Text as="span" fontSize="24px" paddingRight="8px">
-          <AiOutlineComment />
-        </Text>
-        Contato
-      </Button>
+        <Button
+          bg="transparent"
+          borderRadius="0px"
+          borderBottom="2px solid"
+          borderColor={shouldRender === "Contact" ? "cpunk.400" : "transparent"}
+          _hover={{ color: "cpunk.400" }}
+          _active={{ bg: "transparent" }}
+          color={shouldRender === "Contact" ? "cpunk.400" : ""}
+          display="flex"
+          alignItems="center"
+          onClick={() => {
+            setShouldRender("Contact");
+            onClose();
+          }}
+          justifyContent="center"
+        >
+          <Text as="span" fontSize="24px" paddingRight="8px">
+            <AiOutlineComment />
+          </Text>
+          Contato
+        </Button>
+      </Flex>
     </Flex>
   );
 };

@@ -31,7 +31,7 @@ export const theme = extendTheme({
       400: "#0100EC",
       500: "#FB36F4",
     },
-    futuristas: {
+    cpunk: {
       200: "#0c0931",
       300: "#1d1856",
       400: "#e80074",
@@ -42,13 +42,14 @@ export const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: "darkblue.600",
+        bgGradient: "linear(to-b, darkblue.600, darkblue.500, darkblue.400)",
         color: "white",
+        minHeight: "100vh",
       },
     },
   },
   fonts: {
-    heading: "Inter",
-    body: "Inter",
+    heading: "Arima",
+    body: "Arima",
   },
 });

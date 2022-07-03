@@ -19,9 +19,9 @@ export const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Flex
-      justifyContent="space-between"
+      justifyContent={["flex-end", "flex-end", "flex-end", "center"]}
       h="12vh"
-      bg="rgba(2, 3, 5, 0.8)"
+      bg="transparent"
       py="30px"
       w="100%"
       maxWidth="100vw"
@@ -35,7 +35,10 @@ export const Header = () => {
       >
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerBody bg="darkblue.500" p="0px">
+          <DrawerBody
+            bgGradient="linear(to-b, darkblue.600, darkblue.500, darkblue.400)"
+            p="0px"
+          >
             <Flex
               w="100%"
               justifyContent="flex-end"
@@ -58,24 +61,6 @@ export const Header = () => {
           </DrawerBody>
         </DrawerContent>
       </Drawer>
-      <Flex
-        h="100%"
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
-        w="max-content"
-        maxWidth="50%"
-      >
-        <Heading
-          color="white"
-          borderRadius="8px"
-          borderColor="green.200"
-          fontSize={["16px", "18px", "24px", "26px"]}
-          pl="15px"
-        >
-          &lt;Isaac Xavier&gt;
-        </Heading>
-      </Flex>
       <Flex display={["block", "block", "block", "none"]}>
         <Button
           border="none"

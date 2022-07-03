@@ -1,4 +1,4 @@
-import { Flex, Heading, Text } from "@chakra-ui/react";
+import { Flex, Heading, Image, Text } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -14,6 +14,7 @@ import { Header } from "../../components/Header";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { useContext } from "react";
 import { RenderContext } from "../../context";
+import avatar from "../../assets/AvatarMaker.svg";
 
 export const MainPage = () => {
   const { shouldRender } = useContext(RenderContext);
@@ -22,8 +23,8 @@ export const MainPage = () => {
   const { text } = useTypewriter({
     words,
     loop: 0,
-    typeSpeed: 70,
-    deleteSpeed: 50,
+    typeSpeed: 100,
+    deleteSpeed: 80,
     delaySpeed: 1000,
   });
 
@@ -37,24 +38,43 @@ export const MainPage = () => {
     >
       <Header />
       {shouldRender === "Home" && (
-        <Flex h="75vh" w="90%" bg="gray.300" justifyContent="center">
-          <Heading pt="105px" fontSize={["14px", "14px", "14px", "initial"]}>
-            Oi, eu sou o Isaac, sou Desenvolvedor{" "}
-            <Text as="span" color="neon.300">
-              {text}
-              <Cursor />
-            </Text>
-          </Heading>
+        <Flex h="75vh" w="100%" bg="transparent" justifyContent="center">
+          <Flex pt="105px" pl="10%" w="100%">
+            <Flex flexDirection="column" w="50%" maxW="500px">
+              <Heading>Olá,</Heading>
+              <Heading>
+                eu sou o{" "}
+                <Text as="span" color="neon.200">
+                  Isaac Xavier
+                </Text>
+              </Heading>
+              <Heading>
+                sou Desenvolvedor{" "}
+                <Text as="span" color="cpunk.400">
+                  {text}
+                  <Text as="span" color="white">
+                    <Cursor />
+                  </Text>
+                </Text>
+              </Heading>
+            </Flex>
+            <Flex w="200">
+              <Image
+                src={avatar}
+                h={["150px", "150px", "200px"]}
+                borderRadius="200px"
+                border="3px solid"
+                borderColor="cpunk.400"
+              />
+            </Flex>
+          </Flex>
         </Flex>
       )}
+      {shouldRender === "About" && (
+        <Flex h="75vh" w="90%" bg="transparent"></Flex>
+      )}
       {shouldRender === "Projects" && (
-        <Flex
-          h="75vh"
-          w="60%"
-          bg="gray.200"
-          justifyContent="center"
-          alignItems="center"
-        >
+        <Flex h="75vh" w="60%" justifyContent="center" alignItems="center">
           <Swiper
             effect={"cards"}
             grabCursor={true}
