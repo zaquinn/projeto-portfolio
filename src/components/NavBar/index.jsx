@@ -1,5 +1,4 @@
 import { Button, Flex, Text } from "@chakra-ui/react";
-import { useContext } from "react";
 
 import {
   AiOutlineHome,
@@ -8,10 +7,11 @@ import {
   AiOutlineCodeSandbox,
   AiOutlineIdcard,
 } from "react-icons/ai";
-import { RenderContext } from "../../context";
+import { useHistory, useLocation } from "react-router-dom";
 
 export const NavBar = ({ onClose }) => {
-  const { shouldRender, setShouldRender } = useContext(RenderContext);
+  const history = useHistory();
+  const location = useLocation();
   return (
     <Flex
       as="nav"
@@ -39,12 +39,12 @@ export const NavBar = ({ onClose }) => {
           borderRadius="0px"
           _hover={{ color: "cpunk.400" }}
           _active={{ bg: "transparent" }}
-          color={shouldRender === "Home" ? "cpunk.400" : ""}
+          color={location.pathname === "/" ? "cpunk.400" : ""}
           display="flex"
           alignItems="center"
           onClick={() => {
-            setShouldRender("Home");
-            onClose();
+            history.push("/");
+            onClose && onClose();
           }}
           justifyContent="center"
         >
@@ -59,12 +59,12 @@ export const NavBar = ({ onClose }) => {
           borderRadius="0px"
           _hover={{ color: "cpunk.400" }}
           _active={{ bg: "transparent" }}
-          color={shouldRender === "About" ? "cpunk.400" : ""}
+          color={location.pathname === "/About" ? "cpunk.400" : ""}
           display="flex"
           alignItems="center"
           onClick={() => {
-            setShouldRender("About");
-            onClose();
+            history.push("/About");
+            onClose && onClose();
           }}
           justifyContent="center"
         >
@@ -79,12 +79,12 @@ export const NavBar = ({ onClose }) => {
           borderRadius="0px"
           _hover={{ color: "cpunk.400" }}
           _active={{ bg: "transparent" }}
-          color={shouldRender === "Projects" ? "cpunk.400" : ""}
+          color={location.pathname === "/Projects" ? "cpunk.400" : ""}
           display="flex"
           alignItems="center"
           onClick={() => {
-            setShouldRender("Projects");
-            onClose();
+            history.push("/Projects");
+            onClose && onClose();
           }}
           justifyContent="center"
         >
@@ -99,12 +99,12 @@ export const NavBar = ({ onClose }) => {
           borderRadius="0px"
           _hover={{ color: "cpunk.400" }}
           _active={{ bg: "transparent" }}
-          color={shouldRender === "Techs" ? "cpunk.400" : ""}
+          color={location.pathname === "/Techs" ? "cpunk.400" : ""}
           display="flex"
           alignItems="center"
           onClick={() => {
-            setShouldRender("Techs");
-            onClose();
+            history.push("/Techs");
+            onClose && onClose();
           }}
           justifyContent="center"
         >
@@ -118,15 +118,17 @@ export const NavBar = ({ onClose }) => {
           bg="transparent"
           borderRadius="0px"
           borderBottom="2px solid"
-          borderColor={shouldRender === "Contact" ? "cpunk.400" : "transparent"}
+          borderColor={
+            location.pathname === "/Contact" ? "cpunk.400" : "transparent"
+          }
           _hover={{ color: "cpunk.400" }}
           _active={{ bg: "transparent" }}
-          color={shouldRender === "Contact" ? "cpunk.400" : ""}
+          color={location.pathname === "/Contact" ? "cpunk.400" : ""}
           display="flex"
           alignItems="center"
           onClick={() => {
-            setShouldRender("Contact");
-            onClose();
+            history.push("/Contact");
+            onClose && onClose();
           }}
           justifyContent="center"
         >

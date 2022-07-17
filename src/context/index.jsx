@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const RenderContext = createContext("");
 
 export const RenderProvider = ({ children }) => {
-  const [shouldRender, setShouldRender] = useState("Home");
+  const [shouldRender, setShouldRender] = useState("/");
 
   return (
     <RenderContext.Provider value={{ shouldRender, setShouldRender }}>

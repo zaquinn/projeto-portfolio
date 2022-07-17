@@ -1,5 +1,9 @@
-import { MainPage } from "./pages/MainPage";
+import Routes from "./routes";
 
 export const App = () => {
-  return <MainPage />;
+  return (
+    <>
+      <Routes />
+    </>
+  );
 };
