@@ -1,15 +1,12 @@
-import { Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Flex, Heading, keyframes, Text } from "@chakra-ui/react";
 import { Header } from "../../components/Header";
+import { AiOutlineRight } from "react-icons/ai";
+import { motion } from "framer-motion";
+import { useHistory } from "react-router-dom";
 
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import { useContext } from "react";
-import { RenderContext } from "../../context";
-import avatar from "../../assets/AvatarMaker.svg";
-import { useLocation } from "react-router-dom";
 
 export const HomePage = () => {
-  const location = useLocation();
-
   const words = ["Front End", "Back End", "Full Stack"];
   const { text } = useTypewriter({
     words,
@@ -19,29 +16,42 @@ export const HomePage = () => {
     delaySpeed: 1000,
   });
 
+  const history = useHistory();
+
+  const animationKeyframes = keyframes`
+  0% { box-shadow: 0 0 0 0 rgb(232 0 116); }
+  70% { box-shadow: 0 0 0 23px rgb(232 0 116 / 0%); }
+  100% { box-shadow: 0 0 0 0 rgb(232 0 116 / 0%); }
+`;
+
+  const animation = `${animationKeyframes} 2s infinite`;
+
   return (
     <Flex
-      height="max-content"
+      minH="100vh"
       flexDirection="column"
       alignItems="center"
       w="100%"
       maxWidth="100vw"
+      justifyContent="space-between"
+      overflow="hidden"
     >
       <Header />
-      <Flex h="75vh" w="100%" bg="transparent" justifyContent="center">
+      <Flex h="max-content" w="100%" bg="transparent" justifyContent="center">
         <Flex
-          pt="105px"
+          pt={["0px", "0px", "0px", "105px"]}
           pl="5%"
           pr="5%"
           w="100%"
-          flexDirection={["column-reverse", "column-reverse", "row"]}
+          flexDirection={["column", "column", "column", "column", "row"]}
           justifyContent="center"
+          h="max-content"
         >
           <Flex
             flexDirection="column"
-            w={["100%", "100%", "50%"]}
+            w={["100%", "100%", "100%", "50%"]}
             maxW="500px"
-            h="100%"
+            h={["220px", "220px", "220px", "220px", "100%"]}
           >
             <Heading lineHeight="2.8rem">Olá,</Heading>
             <Heading lineHeight="2.8rem">
@@ -60,16 +70,39 @@ export const HomePage = () => {
               </Text>
             </Heading>
           </Flex>
-          <Flex w="200" justifyContent="center">
-            <Image
-              src={avatar}
-              h={["150px", "150px", "200px"]}
-              borderRadius="200px"
-              border="3px solid"
-              borderColor="cpunk.400"
-            />
+          <Flex
+            w={["100%", "100%", "600px"]}
+            h={["110px", "110px", "110px", "110px", "300px"]}
+            alignItems="flex-start"
+            flexDirection="column"
+            justifyContent={["flex-start", "flex-start", "flex-end"]}
+          >
+            <Heading fontSize={["16px", "18px", "23px"]} fontStyle="italic">
+              “São as pessoas que ninguém imagina que fazem as coisas que
+              ninguém pode imaginar”
+            </Heading>
+            <Heading
+              fontSize={["16px", "18px", "23px"]}
+              pt={["10px", "10px", "20px"]}
+            >
+              - Alan Turing
+            </Heading>
           </Flex>
         </Flex>
+      </Flex>
+      <Flex
+        color="darkblue.600"
+        as={motion.div}
+        animation={animation}
+        borderRadius="100px"
+        bg="cpunk.400"
+        onClick={() => history.push("/About")}
+        fontSize={["70px", "80px"]}
+      >
+        <AiOutlineRight cursor="pointer" />
+      </Flex>
+      <Flex as="footer" fontSize="12px">
+        <Text>&lsaquo;/Desenvolvido com ♥ por Isaac&rsaquo;</Text>
       </Flex>
     </Flex>
   );

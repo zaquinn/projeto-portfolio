@@ -57,7 +57,24 @@ export const Header = () => {
                 <AiOutlineMenu />
               </Button>
             </Flex>
+            <Flex
+              color="cpunk.400"
+              justifyContent="center"
+              fontWeight="700"
+              fontSize="50px"
+            >
+              <Text>&lsaquo;&rsaquo;</Text>
+            </Flex>
             <NavBar onClose={onClose} />
+            <Flex
+              color="cpunk.400"
+              justifyContent="center"
+              fontWeight="700"
+              fontSize="50px"
+              pt="30px"
+            >
+              <Text>&lsaquo;/ &rsaquo;</Text>
+            </Flex>
           </DrawerBody>
         </DrawerContent>
       </Drawer>
