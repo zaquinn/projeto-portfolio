@@ -117,10 +117,6 @@ export const NavBar = ({ onClose }) => {
         <Button
           bg="transparent"
           borderRadius="0px"
-          borderBottom="2px solid"
-          borderColor={
-            location.pathname === "/Contact" ? "cpunk.400" : "transparent"
-          }
           _hover={{ color: "cpunk.400" }}
           _active={{ bg: "transparent" }}
           color={location.pathname === "/Contact" ? "cpunk.400" : ""}
