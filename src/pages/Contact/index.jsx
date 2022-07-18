@@ -28,7 +28,7 @@ export const Contact = () => {
       w="100%"
       maxWidth="100vw"
       justifyContent="space-between"
-      overflow="hidden"
+      overflow={["initial", "initial", "initial", "hidden"]}
     >
       <Header />
       <Flex

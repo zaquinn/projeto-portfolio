@@ -43,7 +43,7 @@ export const Projects = () => {
       w="100%"
       maxWidth="100vw"
       justifyContent="space-between"
-      overflow={["auto", "auto", "auto", "hidden"]}
+      overflow={["initial", "initial", "initial", "hidden"]}
     >
       <Header />
       <Flex
