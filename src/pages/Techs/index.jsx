@@ -197,7 +197,15 @@ export const Techs = () => {
                     animation={loadingAnimation}
                     color="cpunk.400"
                   />
-                  Flask
+                  Django
+                </ListItem>
+                <ListItem>
+                  <ListIcon
+                    as={AiOutlineLoading3Quarters}
+                    animation={loadingAnimation}
+                    color="cpunk.400"
+                  />
+                  FastAPI
                 </ListItem>
                 <ListIcon as={AiOutlineCheck} color="green.200" />
                 Docker
